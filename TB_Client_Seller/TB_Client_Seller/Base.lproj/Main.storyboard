@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Yns-QC-fUy">
-                                <rect key="frame" x="20" y="30" width="560" height="310"/>
+                                <rect key="frame" x="20" y="30" width="560" height="295"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please Identify yourself ?" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHg-qB-ZGI">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="34"/>
@@ -77,7 +77,10 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sc0-n2-UrO" customClass="BButton">
-                                        <rect key="frame" x="0.0" y="245" width="560" height="65"/>
+                                        <rect key="frame" x="0.0" y="245" width="560" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="NFP-OJ-hDt"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                         <state key="normal" title="LOGIN"/>
                                         <connections>
@@ -89,9 +92,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.72035223250000002" green="0.8797573447" blue="0.93801230189999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Yns-QC-fUy" firstAttribute="leading" secondItem="dct-LL-LSa" secondAttribute="leadingMargin" id="1xZ-2F-17E"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Yns-QC-fUy" secondAttribute="trailing" id="Hri-2m-det"/>
-                            <constraint firstItem="Yns-QC-fUy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="llW-dy-gcg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Yns-QC-fUy" secondAttribute="trailing" id="7Qw-4X-8yP"/>
+                            <constraint firstItem="Yns-QC-fUy" firstAttribute="leading" secondItem="dct-LL-LSa" secondAttribute="leadingMargin" id="Stw-xp-yya"/>
+                            <constraint firstItem="Yns-QC-fUy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="YS6-Xx-Qnm"/>
                         </constraints>
                     </view>
                     <connections>
