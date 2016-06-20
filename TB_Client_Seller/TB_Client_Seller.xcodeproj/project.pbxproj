@@ -9,8 +9,12 @@
 /* Begin PBXBuildFile section */
 		522FF091C4C2FA1163792AC7 /* Pods_TB_Client_SellerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8BFD12D795B96F2432D06B7 /* Pods_TB_Client_SellerUITests.framework */; };
 		64AFA60E8CD2FAB764ECB404 /* Pods_TB_Client_SellerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0E7CE06322EE153101407E8 /* Pods_TB_Client_SellerTests.framework */; };
+		AFD916981D18231A00E8E322 /* HTTPSSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD916971D18231A00E8E322 /* HTTPSSession.swift */; };
+		AFD9169A1D18258800E8E322 /* ReceiptPayDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD916991D18258800E8E322 /* ReceiptPayDTO.swift */; };
+		AFD9169D1D18264100E8E322 /* MessageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9169B1D18264100E8E322 /* MessageDTO.swift */; };
+		AFD9169E1D18264100E8E322 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9169C1D18264100E8E322 /* Settings.swift */; };
 		AFDC68C61D1047910060210A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC68C51D1047910060210A /* AppDelegate.swift */; };
-		AFDC68C81D1047910060210A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC68C71D1047910060210A /* ViewController.swift */; };
+		AFDC68C81D1047910060210A /* ViewControllerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC68C71D1047910060210A /* ViewControllerLogin.swift */; };
 		AFDC68CB1D1047910060210A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFDC68C91D1047910060210A /* Main.storyboard */; };
 		AFDC68CE1D1047910060210A /* TB_Client_Seller.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFDC68CC1D1047910060210A /* TB_Client_Seller.xcdatamodeld */; };
 		AFDC68D01D1047910060210A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFDC68CF1D1047910060210A /* Assets.xcassets */; };
@@ -42,9 +46,13 @@
 		1F821E8F2DBBE02627B21E35 /* Pods-TB_Client_SellerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TB_Client_SellerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TB_Client_SellerUITests/Pods-TB_Client_SellerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		787764DBB8DC687A599424E4 /* Pods-TB_Client_Seller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TB_Client_Seller.release.xcconfig"; path = "Pods/Target Support Files/Pods-TB_Client_Seller/Pods-TB_Client_Seller.release.xcconfig"; sourceTree = "<group>"; };
 		A8BFD12D795B96F2432D06B7 /* Pods_TB_Client_SellerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TB_Client_SellerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFD916971D18231A00E8E322 /* HTTPSSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPSSession.swift; sourceTree = "<group>"; };
+		AFD916991D18258800E8E322 /* ReceiptPayDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptPayDTO.swift; sourceTree = "<group>"; };
+		AFD9169B1D18264100E8E322 /* MessageDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDTO.swift; sourceTree = "<group>"; };
+		AFD9169C1D18264100E8E322 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		AFDC68C21D1047910060210A /* TB_Client_Seller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TB_Client_Seller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFDC68C51D1047910060210A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AFDC68C71D1047910060210A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AFDC68C71D1047910060210A /* ViewControllerLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLogin.swift; sourceTree = "<group>"; };
 		AFDC68CA1D1047910060210A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AFDC68CD1D1047910060210A /* TB_Client_Seller.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TB_Client_Seller.xcdatamodel; sourceTree = "<group>"; };
 		AFDC68CF1D1047910060210A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,8 +137,12 @@
 		AFDC68C41D1047910060210A /* TB_Client_Seller */ = {
 			isa = PBXGroup;
 			children = (
+				AFD9169B1D18264100E8E322 /* MessageDTO.swift */,
+				AFD9169C1D18264100E8E322 /* Settings.swift */,
+				AFD916991D18258800E8E322 /* ReceiptPayDTO.swift */,
+				AFD916971D18231A00E8E322 /* HTTPSSession.swift */,
 				AFDC68C51D1047910060210A /* AppDelegate.swift */,
-				AFDC68C71D1047910060210A /* ViewController.swift */,
+				AFDC68C71D1047910060210A /* ViewControllerLogin.swift */,
 				AFDC68C91D1047910060210A /* Main.storyboard */,
 				AFDC68CF1D1047910060210A /* Assets.xcassets */,
 				AFDC68D11D1047910060210A /* LaunchScreen.storyboard */,
@@ -439,9 +451,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFDC68C81D1047910060210A /* ViewController.swift in Sources */,
+				AFD916981D18231A00E8E322 /* HTTPSSession.swift in Sources */,
+				AFDC68C81D1047910060210A /* ViewControllerLogin.swift in Sources */,
 				AFDC68C61D1047910060210A /* AppDelegate.swift in Sources */,
+				AFD9169D1D18264100E8E322 /* MessageDTO.swift in Sources */,
+				AFD9169E1D18264100E8E322 /* Settings.swift in Sources */,
 				AFDC68CE1D1047910060210A /* TB_Client_Seller.xcdatamodeld in Sources */,
+				AFD9169A1D18258800E8E322 /* ReceiptPayDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
