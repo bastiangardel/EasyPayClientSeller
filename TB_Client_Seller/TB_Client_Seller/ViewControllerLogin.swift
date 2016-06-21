@@ -57,5 +57,50 @@ class ViewControllerLogin: UIViewController {
       // Dispose of any resources that can be recreated.
    }
 
+   @IBAction func loginAction(sender: AnyObject) {
+      keychain.set(SaveLP.on, forKey: "SaveLP");
+      
+      loginButton.enabled = false
+      
+      hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+      hud?.labelText = "Login Request in Progress"
+      
+      httpsSession.login(LoginTF.text!, password: PasswordTF.text!){
+         (success: Bool, errorDescription:String) in
+         
+         self.hud!.hide(true)
+         if(success)
+         {
+            if ((self.keychain.get("login")) == nil && (self.keychain.get("password")) == nil) {
+               if self.SaveLP.on {
+                  self.keychain.set(self.LoginTF.text!, forKey: "login");
+                  self.keychain.set(self.PasswordTF.text!, forKey: "password");
+               }
+            }
+            else
+            {
+               if !self.SaveLP.on {
+                  self.keychain.delete("login")
+                  self.keychain.delete("password");
+               }
+               
+            }
+            self.performSegueWithIdentifier("loginSegue", sender: self)
+         }
+         else
+         {
+            
+            
+            let alertView = SCLAlertView()
+            alertView.showError("Login Error", subTitle: errorDescription)
+            
+            self.loginButton.enabled = true
+            
+         }
+         
+      }
+   }
+   
+   
 }
 

@@ -85,6 +85,9 @@
                                         <rect key="frame" x="0.0" y="265" width="460" height="65"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                         <state key="normal" title="LOGIN"/>
+                                        <connections>
+                                            <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="951-RI-cYn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -101,10 +104,39 @@
                         <outlet property="PasswordTF" destination="5Ie-Ha-0kw" id="CWB-4u-vc5"/>
                         <outlet property="SaveLP" destination="4CE-G7-jFX" id="fzp-pk-bPe"/>
                         <outlet property="loginButton" destination="jfz-Zr-K0i" id="D06-7o-fXc"/>
+                        <segue destination="P7p-tV-w9Y" kind="showDetail" identifier="loginSegue" id="KmV-Nr-Zhp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="8dv-Fo-7SF">
+            <objects>
+                <tableViewController id="P7p-tV-w9Y" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4CV-GS-eh9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7tK-e1-Nda">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7tK-e1-Nda" id="2Mf-ht-GbQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="P7p-tV-w9Y" id="4Am-iB-6fG"/>
+                            <outlet property="delegate" destination="P7p-tV-w9Y" id="hac-BK-16e"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vRv-BK-UGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1045" y="294"/>
         </scene>
     </scenes>
 </document>
