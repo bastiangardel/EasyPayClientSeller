@@ -582,7 +582,8 @@ typedef NS_ENUM(unsigned short, FAIcon) {
     FAShekel = 0xf20b,
     FASheqel = 0xf20b,
     FAIls = 0xf20b,
-    FAMeanpath = 0xf20c
+    FAMeanpath = 0xf20c,
+    FABluetooth = 0xf293
 };
 
 @interface NSString (FontAwesome)

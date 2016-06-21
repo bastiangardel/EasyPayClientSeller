@@ -9,8 +9,49 @@
 /* Begin PBXBuildFile section */
 		054241B259AD84795E25D2DE /* Pods_TB_Client_SellerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC9CDEBE8AEA4D63FE569A8 /* Pods_TB_Client_SellerTests.framework */; };
 		5068DAAEC26245945F08B795 /* Pods_TB_Client_SellerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F905442D564B64E256336BC /* Pods_TB_Client_SellerUITests.framework */; };
+		AF42AFA21D185954004AF26C /* HTTPSSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42AF9E1D185954004AF26C /* HTTPSSession.swift */; };
+		AF42AFA31D185954004AF26C /* ReceiptPayDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42AF9F1D185954004AF26C /* ReceiptPayDTO.swift */; };
+		AF42AFA41D185954004AF26C /* MessageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42AFA01D185954004AF26C /* MessageDTO.swift */; };
+		AF42AFA51D185954004AF26C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42AFA11D185954004AF26C /* Settings.swift */; };
+		AFEC1BD81D193E3F000B96DE /* font-awesome.css in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BB01D193E3F000B96DE /* font-awesome.css */; };
+		AFEC1BD91D193E3F000B96DE /* font-awesome.min.css in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BB11D193E3F000B96DE /* font-awesome.min.css */; };
+		AFEC1BDA1D193E3F000B96DE /* fontawesome-webfont.eot in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BB31D193E3F000B96DE /* fontawesome-webfont.eot */; };
+		AFEC1BDB1D193E3F000B96DE /* fontawesome-webfont.svg in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BB41D193E3F000B96DE /* fontawesome-webfont.svg */; };
+		AFEC1BDC1D193E3F000B96DE /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BB51D193E3F000B96DE /* fontawesome-webfont.ttf */; };
+		AFEC1BDD1D193E3F000B96DE /* fontawesome-webfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BB61D193E3F000B96DE /* fontawesome-webfont.woff */; };
+		AFEC1BDE1D193E3F000B96DE /* fontawesome-webfont.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BB71D193E3F000B96DE /* fontawesome-webfont.woff2 */; };
+		AFEC1BDF1D193E3F000B96DE /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BB81D193E3F000B96DE /* FontAwesome.otf */; };
+		AFEC1BE01D193E3F000B96DE /* HELP-US-OUT.txt in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BB91D193E3F000B96DE /* HELP-US-OUT.txt */; };
+		AFEC1BE11D193E3F000B96DE /* animated.less in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BBB1D193E3F000B96DE /* animated.less */; };
+		AFEC1BE21D193E3F000B96DE /* bordered-pulled.less in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BBC1D193E3F000B96DE /* bordered-pulled.less */; };
+		AFEC1BE31D193E3F000B96DE /* core.less in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BBD1D193E3F000B96DE /* core.less */; };
+		AFEC1BE41D193E3F000B96DE /* fixed-width.less in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BBE1D193E3F000B96DE /* fixed-width.less */; };
+		AFEC1BE51D193E3F000B96DE /* font-awesome.less in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BBF1D193E3F000B96DE /* font-awesome.less */; };
+		AFEC1BE61D193E3F000B96DE /* icons.less in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BC01D193E3F000B96DE /* icons.less */; };
+		AFEC1BE71D193E3F000B96DE /* larger.less in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BC11D193E3F000B96DE /* larger.less */; };
+		AFEC1BE81D193E3F000B96DE /* list.less in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BC21D193E3F000B96DE /* list.less */; };
+		AFEC1BE91D193E3F000B96DE /* mixins.less in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BC31D193E3F000B96DE /* mixins.less */; };
+		AFEC1BEA1D193E3F000B96DE /* path.less in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BC41D193E3F000B96DE /* path.less */; };
+		AFEC1BEB1D193E3F000B96DE /* rotated-flipped.less in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BC51D193E3F000B96DE /* rotated-flipped.less */; };
+		AFEC1BEC1D193E3F000B96DE /* screen-reader.less in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BC61D193E3F000B96DE /* screen-reader.less */; };
+		AFEC1BED1D193E3F000B96DE /* stacked.less in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BC71D193E3F000B96DE /* stacked.less */; };
+		AFEC1BEE1D193E3F000B96DE /* variables.less in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BC81D193E3F000B96DE /* variables.less */; };
+		AFEC1BEF1D193E3F000B96DE /* _animated.scss in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BCA1D193E3F000B96DE /* _animated.scss */; };
+		AFEC1BF01D193E3F000B96DE /* _bordered-pulled.scss in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BCB1D193E3F000B96DE /* _bordered-pulled.scss */; };
+		AFEC1BF11D193E3F000B96DE /* _core.scss in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BCC1D193E3F000B96DE /* _core.scss */; };
+		AFEC1BF21D193E3F000B96DE /* _fixed-width.scss in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BCD1D193E3F000B96DE /* _fixed-width.scss */; };
+		AFEC1BF31D193E3F000B96DE /* _icons.scss in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BCE1D193E3F000B96DE /* _icons.scss */; };
+		AFEC1BF41D193E3F000B96DE /* _larger.scss in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BCF1D193E3F000B96DE /* _larger.scss */; };
+		AFEC1BF51D193E3F000B96DE /* _list.scss in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BD01D193E3F000B96DE /* _list.scss */; };
+		AFEC1BF61D193E3F000B96DE /* _mixins.scss in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BD11D193E3F000B96DE /* _mixins.scss */; };
+		AFEC1BF71D193E3F000B96DE /* _path.scss in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BD21D193E3F000B96DE /* _path.scss */; };
+		AFEC1BF81D193E3F000B96DE /* _rotated-flipped.scss in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BD31D193E3F000B96DE /* _rotated-flipped.scss */; };
+		AFEC1BF91D193E3F000B96DE /* _screen-reader.scss in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BD41D193E3F000B96DE /* _screen-reader.scss */; };
+		AFEC1BFA1D193E3F000B96DE /* _stacked.scss in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BD51D193E3F000B96DE /* _stacked.scss */; };
+		AFEC1BFB1D193E3F000B96DE /* _variables.scss in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BD61D193E3F000B96DE /* _variables.scss */; };
+		AFEC1BFC1D193E3F000B96DE /* font-awesome.scss in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BD71D193E3F000B96DE /* font-awesome.scss */; };
 		AFFA6CF31D184A1000190423 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA6CF21D184A1000190423 /* AppDelegate.swift */; };
-		AFFA6CF51D184A1000190423 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA6CF41D184A1000190423 /* ViewController.swift */; };
+		AFFA6CF51D184A1000190423 /* ViewControllerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA6CF41D184A1000190423 /* ViewControllerLogin.swift */; };
 		AFFA6CF81D184A1000190423 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFA6CF61D184A1000190423 /* Main.storyboard */; };
 		AFFA6CFB1D184A1000190423 /* TB_Client_Seller.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFFA6CF91D184A1000190423 /* TB_Client_Seller.xcdatamodeld */; };
 		AFFA6CFD1D184A1000190423 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFFA6CFC1D184A1000190423 /* Assets.xcassets */; };
@@ -44,9 +85,50 @@
 		858C0356FCD88F3E514FF6B5 /* Pods-TB_Client_Seller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TB_Client_Seller.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TB_Client_Seller/Pods-TB_Client_Seller.debug.xcconfig"; sourceTree = "<group>"; };
 		8F905442D564B64E256336BC /* Pods_TB_Client_SellerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TB_Client_SellerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A768BCCEC58D6736AE4D5CCB /* Pods-TB_Client_SellerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TB_Client_SellerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TB_Client_SellerUITests/Pods-TB_Client_SellerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF42AF9E1D185954004AF26C /* HTTPSSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPSSession.swift; sourceTree = "<group>"; };
+		AF42AF9F1D185954004AF26C /* ReceiptPayDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptPayDTO.swift; sourceTree = "<group>"; };
+		AF42AFA01D185954004AF26C /* MessageDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDTO.swift; sourceTree = "<group>"; };
+		AF42AFA11D185954004AF26C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		AFEC1BB01D193E3F000B96DE /* font-awesome.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "font-awesome.css"; sourceTree = "<group>"; };
+		AFEC1BB11D193E3F000B96DE /* font-awesome.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "font-awesome.min.css"; sourceTree = "<group>"; };
+		AFEC1BB31D193E3F000B96DE /* fontawesome-webfont.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.eot"; sourceTree = "<group>"; };
+		AFEC1BB41D193E3F000B96DE /* fontawesome-webfont.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "fontawesome-webfont.svg"; sourceTree = "<group>"; };
+		AFEC1BB51D193E3F000B96DE /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
+		AFEC1BB61D193E3F000B96DE /* fontawesome-webfont.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.woff"; sourceTree = "<group>"; };
+		AFEC1BB71D193E3F000B96DE /* fontawesome-webfont.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.woff2"; sourceTree = "<group>"; };
+		AFEC1BB81D193E3F000B96DE /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
+		AFEC1BB91D193E3F000B96DE /* HELP-US-OUT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HELP-US-OUT.txt"; sourceTree = "<group>"; };
+		AFEC1BBB1D193E3F000B96DE /* animated.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = animated.less; sourceTree = "<group>"; };
+		AFEC1BBC1D193E3F000B96DE /* bordered-pulled.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "bordered-pulled.less"; sourceTree = "<group>"; };
+		AFEC1BBD1D193E3F000B96DE /* core.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = core.less; sourceTree = "<group>"; };
+		AFEC1BBE1D193E3F000B96DE /* fixed-width.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fixed-width.less"; sourceTree = "<group>"; };
+		AFEC1BBF1D193E3F000B96DE /* font-awesome.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "font-awesome.less"; sourceTree = "<group>"; };
+		AFEC1BC01D193E3F000B96DE /* icons.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = icons.less; sourceTree = "<group>"; };
+		AFEC1BC11D193E3F000B96DE /* larger.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = larger.less; sourceTree = "<group>"; };
+		AFEC1BC21D193E3F000B96DE /* list.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = list.less; sourceTree = "<group>"; };
+		AFEC1BC31D193E3F000B96DE /* mixins.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mixins.less; sourceTree = "<group>"; };
+		AFEC1BC41D193E3F000B96DE /* path.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = path.less; sourceTree = "<group>"; };
+		AFEC1BC51D193E3F000B96DE /* rotated-flipped.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "rotated-flipped.less"; sourceTree = "<group>"; };
+		AFEC1BC61D193E3F000B96DE /* screen-reader.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "screen-reader.less"; sourceTree = "<group>"; };
+		AFEC1BC71D193E3F000B96DE /* stacked.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stacked.less; sourceTree = "<group>"; };
+		AFEC1BC81D193E3F000B96DE /* variables.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = variables.less; sourceTree = "<group>"; };
+		AFEC1BCA1D193E3F000B96DE /* _animated.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _animated.scss; sourceTree = "<group>"; };
+		AFEC1BCB1D193E3F000B96DE /* _bordered-pulled.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "_bordered-pulled.scss"; sourceTree = "<group>"; };
+		AFEC1BCC1D193E3F000B96DE /* _core.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _core.scss; sourceTree = "<group>"; };
+		AFEC1BCD1D193E3F000B96DE /* _fixed-width.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "_fixed-width.scss"; sourceTree = "<group>"; };
+		AFEC1BCE1D193E3F000B96DE /* _icons.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _icons.scss; sourceTree = "<group>"; };
+		AFEC1BCF1D193E3F000B96DE /* _larger.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _larger.scss; sourceTree = "<group>"; };
+		AFEC1BD01D193E3F000B96DE /* _list.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _list.scss; sourceTree = "<group>"; };
+		AFEC1BD11D193E3F000B96DE /* _mixins.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _mixins.scss; sourceTree = "<group>"; };
+		AFEC1BD21D193E3F000B96DE /* _path.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _path.scss; sourceTree = "<group>"; };
+		AFEC1BD31D193E3F000B96DE /* _rotated-flipped.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "_rotated-flipped.scss"; sourceTree = "<group>"; };
+		AFEC1BD41D193E3F000B96DE /* _screen-reader.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "_screen-reader.scss"; sourceTree = "<group>"; };
+		AFEC1BD51D193E3F000B96DE /* _stacked.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _stacked.scss; sourceTree = "<group>"; };
+		AFEC1BD61D193E3F000B96DE /* _variables.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _variables.scss; sourceTree = "<group>"; };
+		AFEC1BD71D193E3F000B96DE /* font-awesome.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "font-awesome.scss"; sourceTree = "<group>"; };
 		AFFA6CEF1D184A1000190423 /* TB_Client_Seller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TB_Client_Seller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFA6CF21D184A1000190423 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AFFA6CF41D184A1000190423 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AFFA6CF41D184A1000190423 /* ViewControllerLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLogin.swift; sourceTree = "<group>"; };
 		AFFA6CF71D184A1000190423 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AFFA6CFA1D184A1000190423 /* TB_Client_Seller.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TB_Client_Seller.xcdatamodel; sourceTree = "<group>"; };
 		AFFA6CFC1D184A1000190423 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,9 +173,120 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AFEC1BAE1D193E3F000B96DE /* font-awesome-4.6.1 */ = {
+			isa = PBXGroup;
+			children = (
+				AFEC1BAF1D193E3F000B96DE /* css */,
+				AFEC1BB21D193E3F000B96DE /* fonts */,
+				AFEC1BB91D193E3F000B96DE /* HELP-US-OUT.txt */,
+				AFEC1BBA1D193E3F000B96DE /* less */,
+				AFEC1BC91D193E3F000B96DE /* scss */,
+			);
+			path = "font-awesome-4.6.1";
+			sourceTree = "<group>";
+		};
+		AFEC1BAF1D193E3F000B96DE /* css */ = {
+			isa = PBXGroup;
+			children = (
+				AFEC1BB01D193E3F000B96DE /* font-awesome.css */,
+				AFEC1BB11D193E3F000B96DE /* font-awesome.min.css */,
+			);
+			path = css;
+			sourceTree = "<group>";
+		};
+		AFEC1BB21D193E3F000B96DE /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AFEC1BB31D193E3F000B96DE /* fontawesome-webfont.eot */,
+				AFEC1BB41D193E3F000B96DE /* fontawesome-webfont.svg */,
+				AFEC1BB51D193E3F000B96DE /* fontawesome-webfont.ttf */,
+				AFEC1BB61D193E3F000B96DE /* fontawesome-webfont.woff */,
+				AFEC1BB71D193E3F000B96DE /* fontawesome-webfont.woff2 */,
+				AFEC1BB81D193E3F000B96DE /* FontAwesome.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		AFEC1BBA1D193E3F000B96DE /* less */ = {
+			isa = PBXGroup;
+			children = (
+				AFEC1BBB1D193E3F000B96DE /* animated.less */,
+				AFEC1BBC1D193E3F000B96DE /* bordered-pulled.less */,
+				AFEC1BBD1D193E3F000B96DE /* core.less */,
+				AFEC1BBE1D193E3F000B96DE /* fixed-width.less */,
+				AFEC1BBF1D193E3F000B96DE /* font-awesome.less */,
+				AFEC1BC01D193E3F000B96DE /* icons.less */,
+				AFEC1BC11D193E3F000B96DE /* larger.less */,
+				AFEC1BC21D193E3F000B96DE /* list.less */,
+				AFEC1BC31D193E3F000B96DE /* mixins.less */,
+				AFEC1BC41D193E3F000B96DE /* path.less */,
+				AFEC1BC51D193E3F000B96DE /* rotated-flipped.less */,
+				AFEC1BC61D193E3F000B96DE /* screen-reader.less */,
+				AFEC1BC71D193E3F000B96DE /* stacked.less */,
+				AFEC1BC81D193E3F000B96DE /* variables.less */,
+			);
+			path = less;
+			sourceTree = "<group>";
+		};
+		AFEC1BC91D193E3F000B96DE /* scss */ = {
+			isa = PBXGroup;
+			children = (
+				AFEC1BCA1D193E3F000B96DE /* _animated.scss */,
+				AFEC1BCB1D193E3F000B96DE /* _bordered-pulled.scss */,
+				AFEC1BCC1D193E3F000B96DE /* _core.scss */,
+				AFEC1BCD1D193E3F000B96DE /* _fixed-width.scss */,
+				AFEC1BCE1D193E3F000B96DE /* _icons.scss */,
+				AFEC1BCF1D193E3F000B96DE /* _larger.scss */,
+				AFEC1BD01D193E3F000B96DE /* _list.scss */,
+				AFEC1BD11D193E3F000B96DE /* _mixins.scss */,
+				AFEC1BD21D193E3F000B96DE /* _path.scss */,
+				AFEC1BD31D193E3F000B96DE /* _rotated-flipped.scss */,
+				AFEC1BD41D193E3F000B96DE /* _screen-reader.scss */,
+				AFEC1BD51D193E3F000B96DE /* _stacked.scss */,
+				AFEC1BD61D193E3F000B96DE /* _variables.scss */,
+				AFEC1BD71D193E3F000B96DE /* font-awesome.scss */,
+			);
+			path = scss;
+			sourceTree = "<group>";
+		};
+		AFEC1BFD1D1940E4000B96DE /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				AFFA6CF61D184A1000190423 /* Main.storyboard */,
+				AFFA6CFE1D184A1000190423 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		AFEC1BFE1D194104000B96DE /* Communications */ = {
+			isa = PBXGroup;
+			children = (
+				AF42AF9E1D185954004AF26C /* HTTPSSession.swift */,
+			);
+			name = Communications;
+			sourceTree = "<group>";
+		};
+		AFEC1BFF1D19411B000B96DE /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				AF42AF9F1D185954004AF26C /* ReceiptPayDTO.swift */,
+				AF42AFA01D185954004AF26C /* MessageDTO.swift */,
+			);
+			name = DTO;
+			sourceTree = "<group>";
+		};
+		AFEC1C001D19412E000B96DE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AFFA6CF41D184A1000190423 /* ViewControllerLogin.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
 		AFFA6CE61D184A1000190423 = {
 			isa = PBXGroup;
 			children = (
+				AFEC1BAE1D193E3F000B96DE /* font-awesome-4.6.1 */,
 				AFFA6CF11D184A1000190423 /* TB_Client_Seller */,
 				AFFA6D091D184A1000190423 /* TB_Client_SellerTests */,
 				AFFA6D141D184A1000190423 /* TB_Client_SellerUITests */,
@@ -116,11 +309,13 @@
 		AFFA6CF11D184A1000190423 /* TB_Client_Seller */ = {
 			isa = PBXGroup;
 			children = (
+				AFEC1C001D19412E000B96DE /* ViewController */,
+				AFEC1BFF1D19411B000B96DE /* DTO */,
+				AFEC1BFE1D194104000B96DE /* Communications */,
+				AFEC1BFD1D1940E4000B96DE /* Storyboard */,
+				AF42AFA11D185954004AF26C /* Settings.swift */,
 				AFFA6CF21D184A1000190423 /* AppDelegate.swift */,
-				AFFA6CF41D184A1000190423 /* ViewController.swift */,
-				AFFA6CF61D184A1000190423 /* Main.storyboard */,
 				AFFA6CFC1D184A1000190423 /* Assets.xcassets */,
-				AFFA6CFE1D184A1000190423 /* LaunchScreen.storyboard */,
 				AFFA6D011D184A1000190423 /* Info.plist */,
 				AFFA6CF91D184A1000190423 /* TB_Client_Seller.xcdatamodeld */,
 			);
@@ -289,8 +484,45 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFEC1BFC1D193E3F000B96DE /* font-awesome.scss in Resources */,
+				AFEC1BE31D193E3F000B96DE /* core.less in Resources */,
+				AFEC1BE01D193E3F000B96DE /* HELP-US-OUT.txt in Resources */,
+				AFEC1BEE1D193E3F000B96DE /* variables.less in Resources */,
+				AFEC1BE81D193E3F000B96DE /* list.less in Resources */,
+				AFEC1BE41D193E3F000B96DE /* fixed-width.less in Resources */,
+				AFEC1BD81D193E3F000B96DE /* font-awesome.css in Resources */,
+				AFEC1BDF1D193E3F000B96DE /* FontAwesome.otf in Resources */,
+				AFEC1BE91D193E3F000B96DE /* mixins.less in Resources */,
+				AFEC1BEC1D193E3F000B96DE /* screen-reader.less in Resources */,
+				AFEC1BE71D193E3F000B96DE /* larger.less in Resources */,
+				AFEC1BF71D193E3F000B96DE /* _path.scss in Resources */,
+				AFEC1BF31D193E3F000B96DE /* _icons.scss in Resources */,
+				AFEC1BFB1D193E3F000B96DE /* _variables.scss in Resources */,
 				AFFA6D001D184A1000190423 /* LaunchScreen.storyboard in Resources */,
+				AFEC1BFA1D193E3F000B96DE /* _stacked.scss in Resources */,
+				AFEC1BF51D193E3F000B96DE /* _list.scss in Resources */,
+				AFEC1BF61D193E3F000B96DE /* _mixins.scss in Resources */,
+				AFEC1BDD1D193E3F000B96DE /* fontawesome-webfont.woff in Resources */,
+				AFEC1BF01D193E3F000B96DE /* _bordered-pulled.scss in Resources */,
+				AFEC1BDB1D193E3F000B96DE /* fontawesome-webfont.svg in Resources */,
+				AFEC1BEA1D193E3F000B96DE /* path.less in Resources */,
+				AFEC1BE51D193E3F000B96DE /* font-awesome.less in Resources */,
+				AFEC1BE11D193E3F000B96DE /* animated.less in Resources */,
+				AFEC1BF41D193E3F000B96DE /* _larger.scss in Resources */,
+				AFEC1BD91D193E3F000B96DE /* font-awesome.min.css in Resources */,
+				AFEC1BDE1D193E3F000B96DE /* fontawesome-webfont.woff2 in Resources */,
+				AFEC1BF21D193E3F000B96DE /* _fixed-width.scss in Resources */,
+				AFEC1BE21D193E3F000B96DE /* bordered-pulled.less in Resources */,
+				AFEC1BF11D193E3F000B96DE /* _core.scss in Resources */,
+				AFEC1BEB1D193E3F000B96DE /* rotated-flipped.less in Resources */,
+				AFEC1BEF1D193E3F000B96DE /* _animated.scss in Resources */,
+				AFEC1BDA1D193E3F000B96DE /* fontawesome-webfont.eot in Resources */,
+				AFEC1BF81D193E3F000B96DE /* _rotated-flipped.scss in Resources */,
+				AFEC1BDC1D193E3F000B96DE /* fontawesome-webfont.ttf in Resources */,
+				AFEC1BE61D193E3F000B96DE /* icons.less in Resources */,
 				AFFA6CFD1D184A1000190423 /* Assets.xcassets in Resources */,
+				AFEC1BED1D193E3F000B96DE /* stacked.less in Resources */,
+				AFEC1BF91D193E3F000B96DE /* _screen-reader.scss in Resources */,
 				AFFA6CF81D184A1000190423 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,9 +671,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFFA6CF51D184A1000190423 /* ViewController.swift in Sources */,
+				AF42AFA21D185954004AF26C /* HTTPSSession.swift in Sources */,
+				AFFA6CF51D184A1000190423 /* ViewControllerLogin.swift in Sources */,
 				AFFA6CF31D184A1000190423 /* AppDelegate.swift in Sources */,
+				AF42AFA41D185954004AF26C /* MessageDTO.swift in Sources */,
+				AF42AFA51D185954004AF26C /* Settings.swift in Sources */,
 				AFFA6CFB1D184A1000190423 /* TB_Client_Seller.xcdatamodeld in Sources */,
+				AF42AFA31D185954004AF26C /* ReceiptPayDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
