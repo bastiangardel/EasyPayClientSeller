@@ -13,6 +13,7 @@
 		AF42AFA31D185954004AF26C /* ReceiptPayDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42AF9F1D185954004AF26C /* ReceiptPayDTO.swift */; };
 		AF42AFA41D185954004AF26C /* MessageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42AFA01D185954004AF26C /* MessageDTO.swift */; };
 		AF42AFA51D185954004AF26C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42AFA11D185954004AF26C /* Settings.swift */; };
+		AFAD816F1D194BD300C287CC /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AFAD816E1D194BD300C287CC /* Settings.bundle */; };
 		AFEC1BD81D193E3F000B96DE /* font-awesome.css in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BB01D193E3F000B96DE /* font-awesome.css */; };
 		AFEC1BD91D193E3F000B96DE /* font-awesome.min.css in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BB11D193E3F000B96DE /* font-awesome.min.css */; };
 		AFEC1BDA1D193E3F000B96DE /* fontawesome-webfont.eot in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BB31D193E3F000B96DE /* fontawesome-webfont.eot */; };
@@ -89,6 +90,7 @@
 		AF42AF9F1D185954004AF26C /* ReceiptPayDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptPayDTO.swift; sourceTree = "<group>"; };
 		AF42AFA01D185954004AF26C /* MessageDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDTO.swift; sourceTree = "<group>"; };
 		AF42AFA11D185954004AF26C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		AFAD816E1D194BD300C287CC /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		AFEC1BB01D193E3F000B96DE /* font-awesome.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "font-awesome.css"; sourceTree = "<group>"; };
 		AFEC1BB11D193E3F000B96DE /* font-awesome.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "font-awesome.min.css"; sourceTree = "<group>"; };
 		AFEC1BB31D193E3F000B96DE /* fontawesome-webfont.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.eot"; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 		AFFA6CE61D184A1000190423 = {
 			isa = PBXGroup;
 			children = (
+				AFAD816E1D194BD300C287CC /* Settings.bundle */,
 				AFEC1BAE1D193E3F000B96DE /* font-awesome-4.6.1 */,
 				AFFA6CF11D184A1000190423 /* TB_Client_Seller */,
 				AFFA6D091D184A1000190423 /* TB_Client_SellerTests */,
@@ -489,6 +492,7 @@
 				AFEC1BE01D193E3F000B96DE /* HELP-US-OUT.txt in Resources */,
 				AFEC1BEE1D193E3F000B96DE /* variables.less in Resources */,
 				AFEC1BE81D193E3F000B96DE /* list.less in Resources */,
+				AFAD816F1D194BD300C287CC /* Settings.bundle in Resources */,
 				AFEC1BE41D193E3F000B96DE /* fixed-width.less in Resources */,
 				AFEC1BD81D193E3F000B96DE /* font-awesome.css in Resources */,
 				AFEC1BDF1D193E3F000B96DE /* FontAwesome.otf in Resources */,
