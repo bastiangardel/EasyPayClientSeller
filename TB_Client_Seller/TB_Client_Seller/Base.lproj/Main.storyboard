@@ -104,39 +104,93 @@
                         <outlet property="PasswordTF" destination="5Ie-Ha-0kw" id="CWB-4u-vc5"/>
                         <outlet property="SaveLP" destination="4CE-G7-jFX" id="fzp-pk-bPe"/>
                         <outlet property="loginButton" destination="jfz-Zr-K0i" id="D06-7o-fXc"/>
-                        <segue destination="P7p-tV-w9Y" kind="showDetail" identifier="loginSegue" id="KmV-Nr-Zhp"/>
+                        <segue destination="9aZ-62-bAW" kind="showDetail" identifier="loginSegue" id="chX-4q-6Ya"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="8dv-Fo-7SF">
+        <!--View Controller Checkouts-->
+        <scene sceneID="7fZ-cD-x8i">
             <objects>
-                <tableViewController id="P7p-tV-w9Y" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4CV-GS-eh9">
+                <viewController id="9aZ-62-bAW" customClass="ViewControllerCheckouts" customModule="TB_Client_Seller" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l54-bs-oVW"/>
+                        <viewControllerLayoutGuide type="bottom" id="ORS-Gb-wrv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="daV-uv-ILy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7tK-e1-Nda">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7tK-e1-Nda" id="2Mf-ht-GbQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="P7p-tV-w9Y" id="4Am-iB-6fG"/>
-                            <outlet property="delegate" destination="P7p-tV-w9Y" id="hac-BK-16e"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vRv-BK-UGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IKB-hs-UpG">
+                                <rect key="frame" x="20" y="20" width="560" height="570"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose the checkout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nab-ZH-cqv">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="5kb-XI-sll"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
+                                        <color key="textColor" red="0.99140721559524536" green="0.15880203247070312" blue="0.010123630054295063" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="3" height="2"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lFq-F1-NNT">
+                                        <rect key="frame" x="0.0" y="40" width="560" height="460"/>
+                                        <color key="backgroundColor" red="0.83921568629999999" green="0.91764705879999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <prototypes>
+                                            <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FruitCell" textLabel="DsE-NJ-8bx" style="IBUITableViewCellStyleDefault" id="aFg-Xn-8ak">
+                                                <rect key="frame" x="0.0" y="28" width="560" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aFg-Xn-8ak" id="FTA-RS-f2Z">
+                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DsE-NJ-8bx">
+                                                            <rect key="frame" x="15" y="0.0" width="530" height="43.5"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="je5-yA-bE2" customClass="BButton">
+                                        <rect key="frame" x="0.0" y="510" width="560" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Kti-4N-Ize"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="LOGOUT"/>
+                                        <connections>
+                                            <action selector="logoutAction:" destination="9aZ-62-bAW" eventType="touchUpInside" id="bpj-ll-jxQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.91764705879999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.72035223245620728" green="0.8797573447227478" blue="0.93801230192184448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="IKB-hs-UpG" secondAttribute="trailing" id="CeS-Av-GOp"/>
+                            <constraint firstItem="IKB-hs-UpG" firstAttribute="leading" secondItem="daV-uv-ILy" secondAttribute="leadingMargin" id="Hez-I9-Mov"/>
+                            <constraint firstItem="ORS-Gb-wrv" firstAttribute="top" secondItem="IKB-hs-UpG" secondAttribute="bottom" constant="10" id="Rmk-fo-5Bg"/>
+                            <constraint firstItem="IKB-hs-UpG" firstAttribute="top" secondItem="l54-bs-oVW" secondAttribute="bottom" id="tl8-JE-C8h"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="CheckoutsTable" destination="lFq-F1-NNT" id="6qE-eI-kpC"/>
+                        <outlet property="logoutButton" destination="je5-yA-bE2" id="Ox4-1Q-W6r"/>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="logoutSegue" id="WZu-nx-KPx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dhg-Pt-2iv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1045" y="294"/>
+            <point key="canvasLocation" x="1012" y="294"/>
         </scene>
     </scenes>
 </document>
