@@ -76,28 +76,15 @@ class ViewControllerCheckouts: UIViewController,UITableViewDelegate, UITableView
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
    
    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return data.count
+      return (checkoutlist?.count)!
    }
    
    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-      print("test")
       let cell = tableView.dequeueReusableCellWithIdentifier("FruitCell", forIndexPath: indexPath)
-      cell.textLabel?.text = data[indexPath.row]
-      
-      //cell.backgroundColor = UIColor(red: 219, green: 234, blue: 227, alpha: 0)
+      cell.textLabel?.text = (checkoutlist?[indexPath.row]?.name)! + " : " + (checkoutlist?[indexPath.row]?.uuid)!
       cell.backgroundColor = UIColor(colorLiteralRed: 0.88, green: 0.93, blue: 0.91, alpha: 0.7)
       
       return cell
