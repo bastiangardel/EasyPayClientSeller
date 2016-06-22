@@ -161,9 +161,9 @@ public class HTTPSSession: NSObject {
    }
    
    
-   public func getReceiptToPay (let checkOutUUID: String, completion: (success: Bool, errorDescription: String, receiptPayDTO : ReceiptPayDTO?) -> Void){
+   public func getListCheckout (completion: (success: Bool, errorDescription: String, listCheckoutDTO : Array<CheckoutDTO?>?) -> Void){
 
-      var receipt : ReceiptPayDTO?
+      var listCheckout : Array<CheckoutDTO?>?
       
       
       let headers = [
@@ -171,57 +171,24 @@ public class HTTPSSession: NSObject {
          "Accept": "application/json"
       ]
       
-      print("try to get Receipt to pay")
+      print("try to get the list of Checkout")
       
       
-      defaultManager.request(.GET, completeURL(HTTPSSession.URL, port: HTTPSSession.PORT, restEndpoint: "/receipts/pay"), headers : headers, parameters: ["uuid" : checkOutUUID])
+      defaultManager.request(.GET, completeURL(HTTPSSession.URL, port: HTTPSSession.PORT, restEndpoint: "/checkouts/checkoutlist"), headers : headers)
          .validate()
          .responseJSON{ Response in
             print(Response.request)
             switch Response.result {
             case .Success:
-               print("Get Receipt Successfully")
-               receipt = Mapper<ReceiptPayDTO>().map(Response.result.value)!
+               print("Get Checkout Successfully")
+               listCheckout = Mapper<CheckoutDTO>().mapArray(Response.result.value)!
 
-               completion(success: true, errorDescription: "", receiptPayDTO: receipt)
+               completion(success: true, errorDescription: "", listCheckoutDTO: listCheckout)
             
                
             case .Failure(let error):
-               print("Get Receipt Failfully")
-               completion(success: false, errorDescription : self.errorDescriptionJSON(Response, error: error), receiptPayDTO: receipt)
-            }
-      }
-   }
-   
-   
-   public func PayReceipt (let receipt: ReceiptPayDTO, let UUID: String, completion: (success: Bool, description: String) -> Void){
-      
-      var message : MessageDTO?
-      
-      
-      let headers = [
-         "Content-Type": "application/json",
-         "Accept": "application/json"
-      ]
-      
-      print("try to get Receipt to pay")
-      
-      
-      defaultManager.request(.POST, completeURL(HTTPSSession.URL, port: HTTPSSession.PORT, restEndpoint: "/receipts/pay") + requestParameter("uuid", value: UUID), headers : headers, parameters: Mapper<ReceiptPayDTO>().toJSON(receipt) , encoding: .JSON)
-         .validate()
-         .responseJSON{ Response in
-            switch Response.result {
-            case .Success:
-               print("Send Receipt Successfully")
-               
-               message = Mapper<MessageDTO>().map(Response.result.value)!
-               
-               completion(success: true, description: (message!.message)!)
-               
-               
-            case .Failure(let error):
-               print("Send Receipt Failfully")
-               completion(success: false, description : self.errorDescriptionJSON(Response, error: error))
+               print("Get list checkout Failfully")
+               completion(success: false, errorDescription : self.errorDescriptionJSON(Response, error: error), listCheckoutDTO: listCheckout)
             }
       }
    }

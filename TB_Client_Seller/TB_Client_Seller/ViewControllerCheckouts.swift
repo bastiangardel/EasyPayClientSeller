@@ -8,6 +8,8 @@
 
 import UIKit
 import BButton
+import MBProgressHUD
+import SCLAlertView
 
 class ViewControllerCheckouts: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
@@ -15,11 +17,17 @@ class ViewControllerCheckouts: UIViewController,UITableViewDelegate, UITableView
    
    @IBOutlet weak var CheckoutsTable: UITableView!
    
+   var httpsSession = HTTPSSession.sharedInstance
+   
+   var hud: MBProgressHUD?
+   
    var data = ["Apple", "Apricot", "Banana", "Blueberry", "Cantaloupe", "Cherry",
                "Clementine", "Coconut", "Cranberry", "Fig", "Grape", "Grapefruit",
                "Kiwi fruit", "Lemon", "Lime", "Lychee", "Mandarine", "Mango",
                "Melon", "Nectarine", "Olive", "Orange", "Papaya", "Peach",
                "Pear", "Pineapple", "Raspberry", "Strawberry"]
+   
+   var checkoutlist: Array<CheckoutDTO?>?
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +38,38 @@ class ViewControllerCheckouts: UIViewController,UITableViewDelegate, UITableView
       logoutButton.setType(BButtonType.Danger)
       logoutButton.addAwesomeIcon(FAIcon.FASignOut, beforeTitle: false)
       
-      //CheckoutsTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "FruitCell")
-      
       CheckoutsTable.delegate = self
       CheckoutsTable.dataSource = self
+      
+      httpsSession.getListCheckout(){
+         (success: Bool, errorDescription:String, listCheckoutDTO : Array<CheckoutDTO?>?) in
+         
+         self.hud!.hide(true)
+         
+         if(success)
+         {
+            self.checkoutlist = listCheckoutDTO
+         }
+         else
+         {
+            let appearance = SCLAlertView.SCLAppearance(
+               kTitleFont: UIFont(name: "HelveticaNeue", size: 20)!,
+               kTextFont: UIFont(name: "HelveticaNeue", size: 14)!,
+               kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 14)!,
+               showCloseButton: false
+            )
+            
+            let alertView = SCLAlertView(appearance: appearance)
+            alertView.addButton("Return to menu"){
+               self.httpsSession.logout()
+               
+               self.performSegueWithIdentifier("logoutSegue", sender: self)
+            }
+            alertView.showError("Receipt Loading Error", subTitle: errorDescription)
+         }
+      }
+
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,7 +108,6 @@ class ViewControllerCheckouts: UIViewController,UITableViewDelegate, UITableView
    }
    
    @IBAction func logoutAction(sender: AnyObject) {
-      let httpsSession = HTTPSSession.sharedInstance
       
       httpsSession.logout()
       
