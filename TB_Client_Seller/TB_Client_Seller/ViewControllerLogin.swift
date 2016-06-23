@@ -60,6 +60,15 @@ class ViewControllerLogin: UIViewController {
    @IBAction func loginAction(sender: AnyObject) {
       keychain.set(SaveLP.on, forKey: "SaveLP");
       
+      let appearance = SCLAlertView.SCLAppearance(
+         kTitleFont: UIFont(name: "HelveticaNeue", size: 30)!,
+         kTextFont: UIFont(name: "HelveticaNeue", size: 30)!,
+         kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 25)!,
+         kWindowWidth: 500.0,
+         kWindowHeight: 500.0,
+         kTitleHeight: 50
+      )
+      
       loginButton.enabled = false
       LoginTF.endEditing(true)
       PasswordTF.endEditing(true)
@@ -92,7 +101,7 @@ class ViewControllerLogin: UIViewController {
          {
             
             
-            let alertView = SCLAlertView()
+            let alertView = SCLAlertView(appearance: appearance)
             alertView.showError("Login Error", subTitle: errorDescription)
             
             self.loginButton.enabled = true
