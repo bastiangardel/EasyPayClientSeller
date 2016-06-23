@@ -161,9 +161,9 @@ public class HTTPSSession: NSObject {
    }
    
    
-   public func getListCheckout (completion: (success: Bool, errorDescription: String, listCheckoutDTO : Array<CheckoutDTO?>?) -> Void){
+   public func getListCheckout (completion: (success: Bool, errorDescription: String, listCheckoutDTO : Array<CheckoutDTO>) -> Void){
 
-      var listCheckout : Array<CheckoutDTO?>?
+      
       
       
       let headers = [
@@ -178,6 +178,9 @@ public class HTTPSSession: NSObject {
          .validate()
          .responseJSON{ Response in
             print(Response.request)
+            
+            var listCheckout : Array<CheckoutDTO>
+            
             switch Response.result {
             case .Success:
                print("Get Checkout Successfully")
@@ -188,6 +191,7 @@ public class HTTPSSession: NSObject {
                
             case .Failure(let error):
                print("Get list checkout Failfully")
+               listCheckout = []
                completion(success: false, errorDescription : self.errorDescriptionJSON(Response, error: error), listCheckoutDTO: listCheckout)
             }
       }

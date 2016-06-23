@@ -61,6 +61,8 @@ class ViewControllerLogin: UIViewController {
       keychain.set(SaveLP.on, forKey: "SaveLP");
       
       loginButton.enabled = false
+      LoginTF.endEditing(true)
+      PasswordTF.endEditing(true)
       
       hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
       hud?.labelText = "Login Request in Progress"
@@ -68,23 +70,22 @@ class ViewControllerLogin: UIViewController {
       httpsSession.login(LoginTF.text!, password: PasswordTF.text!){
          (success: Bool, errorDescription:String) in
          
+         
          self.hud!.hide(true)
          if(success)
          {
-            if ((self.keychain.get("login")) == nil && (self.keychain.get("password")) == nil) {
-               if self.SaveLP.on {
-                  self.keychain.set(self.LoginTF.text!, forKey: "login");
-                  self.keychain.set(self.PasswordTF.text!, forKey: "password");
-               }
+            if(self.SaveLP.on)
+            {
+               self.keychain.set(self.LoginTF.text!, forKey: "login");
+               self.keychain.set(self.PasswordTF.text!, forKey: "password");
             }
             else
             {
-               if !self.SaveLP.on {
-                  self.keychain.delete("login")
-                  self.keychain.delete("password");
-               }
-               
+               self.keychain.delete("login")
+               self.keychain.delete("password");
             }
+            
+            
             self.performSegueWithIdentifier("loginSegue", sender: self)
          }
          else

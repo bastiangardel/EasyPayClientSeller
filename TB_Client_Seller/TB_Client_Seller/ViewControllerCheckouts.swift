@@ -21,13 +21,9 @@ class ViewControllerCheckouts: UIViewController,UITableViewDelegate, UITableView
    
    var hud: MBProgressHUD?
    
-   var data = ["Apple", "Apricot", "Banana", "Blueberry", "Cantaloupe", "Cherry",
-               "Clementine", "Coconut", "Cranberry", "Fig", "Grape", "Grapefruit",
-               "Kiwi fruit", "Lemon", "Lime", "Lychee", "Mandarine", "Mango",
-               "Melon", "Nectarine", "Olive", "Orange", "Papaya", "Peach",
-               "Pear", "Pineapple", "Raspberry", "Strawberry"]
+   var checkoutlist: Array<CheckoutDTO>?
    
-   var checkoutlist: Array<CheckoutDTO?>?
+   var index: Int = 0
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,31 +37,50 @@ class ViewControllerCheckouts: UIViewController,UITableViewDelegate, UITableView
       CheckoutsTable.delegate = self
       CheckoutsTable.dataSource = self
       
+      hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+      hud?.labelText = "Checkouts List Loading in progress"
+      
       httpsSession.getListCheckout(){
-         (success: Bool, errorDescription:String, listCheckoutDTO : Array<CheckoutDTO?>?) in
+         (success: Bool, errorDescription:String, listCheckoutDTO : Array<CheckoutDTO>) in
          
          self.hud!.hide(true)
+         
+         let appearance = SCLAlertView.SCLAppearance(
+            kTitleFont: UIFont(name: "HelveticaNeue", size: 30)!,
+            kTextFont: UIFont(name: "HelveticaNeue", size: 30)!,
+            kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 25)!,
+            kWindowWidth: 500.0,
+            kWindowHeight: 500.0,
+            kTitleHeight: 50,
+            showCloseButton: false
+         )
          
          if(success)
          {
             self.checkoutlist = listCheckoutDTO
+            if(listCheckoutDTO.count == 0)
+            {
+               let alertView = SCLAlertView(appearance: appearance)
+               alertView.addButton("Logout"){
+                  self.httpsSession.logout()
+                  
+                  self.performSegueWithIdentifier("logoutSegue", sender: self)
+               }
+               alertView.showInfo("Checkouts List Info", subTitle: "Please, ask your administrator for a new checkout.")
+            }
+            
+            self.CheckoutsTable.reloadData();
+            
          }
          else
          {
-            let appearance = SCLAlertView.SCLAppearance(
-               kTitleFont: UIFont(name: "HelveticaNeue", size: 20)!,
-               kTextFont: UIFont(name: "HelveticaNeue", size: 14)!,
-               kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 14)!,
-               showCloseButton: false
-            )
-            
             let alertView = SCLAlertView(appearance: appearance)
-            alertView.addButton("Return to menu"){
+            alertView.addButton("Logout"){
                self.httpsSession.logout()
                
                self.performSegueWithIdentifier("logoutSegue", sender: self)
             }
-            alertView.showError("Receipt Loading Error", subTitle: errorDescription)
+            alertView.showError("Checkouts List Loading Error", subTitle: errorDescription)
          }
       }
 
@@ -77,20 +92,36 @@ class ViewControllerCheckouts: UIViewController,UITableViewDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
    
+   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+      if (segue.identifier == "checkoutMenuSegue") {
+         let svc = segue.destinationViewController as! ViewControllerCheckoutMenu;
+         svc.toPass = self.checkoutlist![index];
+      }
+   }
+   
    
    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return (checkoutlist?.count)!
+      
+      if checkoutlist != nil {
+         return (checkoutlist?.count)!
+      }
+      
+      return 0;
    }
    
    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCellWithIdentifier("FruitCell", forIndexPath: indexPath)
-      cell.textLabel?.text = (checkoutlist?[indexPath.row]?.name)! + " : " + (checkoutlist?[indexPath.row]?.uuid)!
+      cell.textLabel?.text = (checkoutlist?[indexPath.row].name)! + " : " + (checkoutlist?[indexPath.row].uuid)!
       cell.backgroundColor = UIColor(colorLiteralRed: 0.88, green: 0.93, blue: 0.91, alpha: 0.7)
       
       return cell
    }
    
    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+      index = indexPath.row
+      
+      self.performSegueWithIdentifier("checkoutMenuSegue", sender: self)
       
    }
    
