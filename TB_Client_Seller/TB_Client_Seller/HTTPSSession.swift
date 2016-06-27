@@ -197,6 +197,40 @@ public class HTTPSSession: NSObject {
       }
    }
    
+   public func getReceiptHistory (let checkOutUUID: String, completion: (success: Bool, errorDescription: String, listCheckoutDTO : Array<ReceiptHistoryDTO>) -> Void){
+      
+      
+      let headers = [
+         "Content-Type": "application/json",
+         "Accept": "application/json"
+      ]
+      
+      print("try to get the history of Receipt")
+      
+      
+      defaultManager.request(.GET, completeURL(HTTPSSession.URL, port: HTTPSSession.PORT, restEndpoint: "/receipts/history"), headers : headers, parameters: ["uuid" : checkOutUUID])
+         .validate()
+         .responseJSON{ Response in
+            print(Response.request)
+            
+            var listCheckout : Array<ReceiptHistoryDTO>
+            
+            switch Response.result {
+            case .Success:
+               print("Get Receipts Successfully")
+               listCheckout = Mapper<ReceiptHistoryDTO>().mapArray(Response.result.value)!
+               
+               completion(success: true, errorDescription: "", listCheckoutDTO: listCheckout)
+               
+               
+            case .Failure(let error):
+               print("Get list Receipts Failfully")
+               listCheckout = []
+               completion(success: false, errorDescription : self.errorDescriptionJSON(Response, error: error), listCheckoutDTO: listCheckout)
+            }
+      }
+   }
+   
    
    public func getReceiptToPay (let checkOutUUID: String, completion: (success: Bool, errorDescription: String, receiptPayDTO : ReceiptPayDTO?) -> Void){
       
