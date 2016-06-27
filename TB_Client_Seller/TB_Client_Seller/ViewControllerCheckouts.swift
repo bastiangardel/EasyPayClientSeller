@@ -111,7 +111,7 @@ class ViewControllerCheckouts: UIViewController,UITableViewDelegate, UITableView
    }
    
    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCellWithIdentifier("FruitCell", forIndexPath: indexPath)
+      let cell = tableView.dequeueReusableCellWithIdentifier("checkoutCell", forIndexPath: indexPath)
       cell.textLabel?.text = (checkoutlist?[indexPath.row].name)! + " : " + (checkoutlist?[indexPath.row].uuid)!
       cell.backgroundColor = UIColor(colorLiteralRed: 0.88, green: 0.93, blue: 0.91, alpha: 0.7)
       

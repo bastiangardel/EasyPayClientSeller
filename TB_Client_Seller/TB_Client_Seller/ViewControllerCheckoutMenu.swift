@@ -63,8 +63,18 @@ class ViewControllerCheckoutMenu: UIViewController {
          let svc = segue.destinationViewController as! ViewControllerReceiptToPay;
          svc.toPass = toPass
       }
+      
+      if (segue.identifier == "receiptHistorySegue") {
+         let svc = segue.destinationViewController as! ViewControllerHistory;
+         svc.toPass = toPass
+      }
+      
    }
 
+   @IBAction func historyAction(sender: AnyObject) {
+      self.performSegueWithIdentifier("receiptHistorySegue", sender: self)
+      
+   }
     /*
     // MARK: - Navigation
 

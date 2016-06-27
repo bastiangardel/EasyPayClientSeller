@@ -15,6 +15,7 @@
 		AF42AFA41D185954004AF26C /* MessageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42AFA01D185954004AF26C /* MessageDTO.swift */; };
 		AF42AFA51D185954004AF26C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42AFA11D185954004AF26C /* Settings.swift */; };
 		AF6F58341D1A8D4D008E8A93 /* CheckoutDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F58331D1A8D4D008E8A93 /* CheckoutDTO.swift */; };
+		AF84828F1D2192D3006A3648 /* ViewControllerHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF84828E1D2192D3006A3648 /* ViewControllerHistory.swift */; };
 		AFAD816F1D194BD300C287CC /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AFAD816E1D194BD300C287CC /* Settings.bundle */; };
 		AFAD81771D196D1D00C287CC /* ViewControllerCheckouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAD81761D196D1D00C287CC /* ViewControllerCheckouts.swift */; };
 		AFE771771D215281001BDBF1 /* ViewControllerReceiptToPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE771761D215281001BDBF1 /* ViewControllerReceiptToPay.swift */; };
@@ -97,6 +98,7 @@
 		AF42AFA01D185954004AF26C /* MessageDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDTO.swift; sourceTree = "<group>"; };
 		AF42AFA11D185954004AF26C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		AF6F58331D1A8D4D008E8A93 /* CheckoutDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutDTO.swift; sourceTree = "<group>"; };
+		AF84828E1D2192D3006A3648 /* ViewControllerHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerHistory.swift; sourceTree = "<group>"; };
 		AFAD816E1D194BD300C287CC /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		AFAD81761D196D1D00C287CC /* ViewControllerCheckouts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerCheckouts.swift; sourceTree = "<group>"; };
 		AFE771761D215281001BDBF1 /* ViewControllerReceiptToPay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerReceiptToPay.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				AFAD81761D196D1D00C287CC /* ViewControllerCheckouts.swift */,
 				AF31396C1D1BE28700B3F3FC /* ViewControllerCheckoutMenu.swift */,
 				AFE771761D215281001BDBF1 /* ViewControllerReceiptToPay.swift */,
+				AF84828E1D2192D3006A3648 /* ViewControllerHistory.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 				AF42AFA51D185954004AF26C /* Settings.swift in Sources */,
 				AFFA6CFB1D184A1000190423 /* TB_Client_Seller.xcdatamodeld in Sources */,
 				AF31396D1D1BE28700B3F3FC /* ViewControllerCheckoutMenu.swift in Sources */,
+				AF84828F1D2192D3006A3648 /* ViewControllerHistory.swift in Sources */,
 				AF42AFA31D185954004AF26C /* ReceiptPayDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
