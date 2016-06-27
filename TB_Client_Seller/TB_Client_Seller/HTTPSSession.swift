@@ -198,6 +198,38 @@ public class HTTPSSession: NSObject {
    }
    
    
+   public func getReceiptToPay (let checkOutUUID: String, completion: (success: Bool, errorDescription: String, receiptPayDTO : ReceiptPayDTO?) -> Void){
+      
+      var receipt : ReceiptPayDTO?
+      
+      
+      let headers = [
+         "Content-Type": "application/json",
+         "Accept": "application/json"
+      ]
+      
+      print("try to get Receipt to pay")
+      
+      
+      defaultManager.request(.GET, completeURL(HTTPSSession.URL, port: HTTPSSession.PORT, restEndpoint: "/receipts/pay"), headers : headers, parameters: ["uuid" : checkOutUUID])
+         .validate()
+         .responseJSON{ Response in
+            print(Response.request)
+            switch Response.result {
+            case .Success:
+               print("Get Receipt Successfully")
+               receipt = Mapper<ReceiptPayDTO>().map(Response.result.value)!
+               
+               completion(success: true, errorDescription: "", receiptPayDTO: receipt)
+               
+               
+            case .Failure(let error):
+               print("Get Receipt Failfully")
+               completion(success: false, errorDescription : self.errorDescriptionJSON(Response, error: error), receiptPayDTO: receipt)
+            }
+      }
+   }
+   
    
    public func logout(){
       defaultManager.request(.POST, completeURL(HTTPSSession.URL, port: HTTPSSession.PORT, restEndpoint: "/users/logout")).responseData{ Response in

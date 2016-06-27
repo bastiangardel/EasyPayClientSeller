@@ -39,6 +39,7 @@ class ViewControllerCheckouts: UIViewController,UITableViewDelegate, UITableView
       
       hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
       hud?.labelText = "Checkouts List Loading in progress"
+      hud?.labelFont = UIFont(name: "HelveticaNeue", size: 30)!
       
       httpsSession.getListCheckout(){
          (success: Bool, errorDescription:String, listCheckoutDTO : Array<CheckoutDTO>) in

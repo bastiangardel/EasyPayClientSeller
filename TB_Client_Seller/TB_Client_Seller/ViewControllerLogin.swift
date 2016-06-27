@@ -74,7 +74,9 @@ class ViewControllerLogin: UIViewController {
       PasswordTF.endEditing(true)
       
       hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+      
       hud?.labelText = "Login Request in Progress"
+      hud?.labelFont = UIFont(name: "HelveticaNeue", size: 30)!
       
       httpsSession.login(LoginTF.text!, password: PasswordTF.text!){
          (success: Bool, errorDescription:String) in
