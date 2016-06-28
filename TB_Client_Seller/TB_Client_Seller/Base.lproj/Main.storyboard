@@ -420,6 +420,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="Create New Receipt"/>
+                                        <connections>
+                                            <action selector="createReceiptAction:" destination="BPp-u9-kgu" eventType="touchUpInside" id="G3V-O3-ONl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Buq-hd-596" customClass="BButton">
                                         <rect key="frame" x="0.0" y="276" width="560" height="70"/>
