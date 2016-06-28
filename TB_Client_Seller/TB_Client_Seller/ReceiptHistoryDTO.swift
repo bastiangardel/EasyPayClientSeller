@@ -14,6 +14,7 @@ public class ReceiptHistoryDTO: Mappable {
    var id : Int?
    var amount : Double?
    var payBy : String?
+   var created: String?
    
    
    required public init?(_ map: Map){
@@ -24,5 +25,6 @@ public class ReceiptHistoryDTO: Mappable {
       id        <- map["id"]
       amount    <- map["amount"]
       payBy    <- map["payBy"]
+      created    <- map["created"]
    }
 }

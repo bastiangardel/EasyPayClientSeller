@@ -114,7 +114,9 @@ class ViewControllerHistory: UIViewController,UITableViewDelegate, UITableViewDa
    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCellWithIdentifier("receiptCell", forIndexPath: indexPath)
       cell.backgroundColor = UIColor(colorLiteralRed: 0.88, green: 0.93, blue: 0.91, alpha: 0.7)
-      cell.textLabel?.text = " ID: " + (receiptlist![indexPath.row].id)!.description + ", Amount: CHF " + (receiptlist![indexPath.row].amount)!.description + ", Payed By: " + (receiptlist![indexPath.row].payBy)!
+      cell.textLabel?.text = " ID: " + (receiptlist![indexPath.row].id)!.description
+         + " | Amount: CHF " + (receiptlist![indexPath.row].amount)!.description
+         + " | Payed By: " + (receiptlist![indexPath.row].payBy)! + " | Created on: " + (receiptlist![indexPath.row].created)!
       return cell
    }
 
