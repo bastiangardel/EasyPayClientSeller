@@ -110,7 +110,7 @@ class ViewControllerCheckoutMenu: UIViewController {
             {
                
                let alertView = SCLAlertView(appearance: appearance)
-               alertView.showSuccess("Delete Last Receipt", subTitle: "Delete with success")
+               alertView.showSuccess("Delete Last Receipt", subTitle: "With Success")
                
                
             }
