@@ -264,6 +264,33 @@ public class HTTPSSession: NSObject {
       }
    }
    
+   public func deleteReceiptToPay (let checkOutUUID: String, completion: (success: Bool, errorDescription: String) -> Void){
+      
+      
+      let headers = [
+         "Content-Type": "application/json",
+         "Accept": "application/json"
+      ]
+      
+      print("try to delete Receipt to pay")
+      
+      
+      defaultManager.request(.DELETE, completeURL(HTTPSSession.URL, port: HTTPSSession.PORT, restEndpoint: "/checkouts/receipttopay"), headers : headers, parameters: ["uuid" : checkOutUUID])
+         .validate()
+         .responseData{ Response in
+            switch Response.result {
+            case .Success:
+               self.updateCookies(Response)
+               print("delete Successful")
+               completion(success: true, errorDescription: "")
+               
+            case .Failure(let error):
+               print("delete fail")
+               completion(success: false, errorDescription : self.errorDescriptionDATA(Response, error: error))
+            }
+      }
+   }
+   
    
    public func logout(){
       defaultManager.request(.POST, completeURL(HTTPSSession.URL, port: HTTPSSession.PORT, restEndpoint: "/users/logout")).responseData{ Response in

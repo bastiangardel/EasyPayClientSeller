@@ -8,6 +8,8 @@
 
 import UIKit
 import BButton
+import MBProgressHUD
+import SCLAlertView
 
 class ViewControllerCheckoutMenu: UIViewController {
    
@@ -19,11 +21,17 @@ class ViewControllerCheckoutMenu: UIViewController {
    
    @IBOutlet weak var returnButton: BButton!
    
+   @IBOutlet weak var deleteReceiptButton: BButton!
+   
+   var httpsSession = HTTPSSession.sharedInstance
+   
    var toPass: CheckoutDTO?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+   
+   var hud: MBProgressHUD?
+   
+   override func viewDidLoad() {
+      super.viewDidLoad()
+      
       // Do any additional setup after loading the view.
       receiptHistoryButton.color = UIColor.bb_defaultColorV2()
       receiptHistoryButton.setStyle(BButtonStyle.BootstrapV2)
@@ -40,17 +48,22 @@ class ViewControllerCheckoutMenu: UIViewController {
       lastReceiptButton.setType(BButtonType.Default)
       lastReceiptButton.addAwesomeIcon(FAIcon.FAShoppingCart, beforeTitle: false)
       
+      deleteReceiptButton.color = UIColor.bb_defaultColorV2()
+      deleteReceiptButton.setStyle(BButtonStyle.BootstrapV2)
+      deleteReceiptButton.setType(BButtonType.Default)
+      deleteReceiptButton.addAwesomeIcon(FAIcon.FATrashO, beforeTitle: false)
+      
       returnButton.color = UIColor.bb_dangerColorV2()
       returnButton.setStyle(BButtonStyle.BootstrapV2)
       returnButton.setType(BButtonType.Danger)
       returnButton.addAwesomeIcon(FAIcon.FAAngleDoubleLeft, beforeTitle: true)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+   }
+   
+   override func didReceiveMemoryWarning() {
+      super.didReceiveMemoryWarning()
+      // Dispose of any resources that can be recreated.
+   }
+   
    @IBAction func returnAction(sender: AnyObject) {
       self.performSegueWithIdentifier("returnCheckoutListSegue", sender: self)
    }
@@ -70,19 +83,52 @@ class ViewControllerCheckoutMenu: UIViewController {
       }
       
    }
-
+   
    @IBAction func historyAction(sender: AnyObject) {
       self.performSegueWithIdentifier("receiptHistorySegue", sender: self)
       
    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   @IBAction func deletReceiptAction(sender: AnyObject) {
+      
+      let appearance = SCLAlertView.SCLAppearance(
+         kTitleFont: UIFont(name: "HelveticaNeue", size: 30)!,
+         kTextFont: UIFont(name: "HelveticaNeue", size: 30)!,
+         kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 25)!,
+         kWindowWidth: 500.0,
+         kWindowHeight: 500.0,
+         kTitleHeight: 50
+      )
+      
+      let alertView = SCLAlertView(appearance: appearance)
+      alertView.addButton("ok"){
+         alertView.hideView()
+         
+         self.httpsSession.deleteReceiptToPay((self.toPass?.uuid)!){
+            (success: Bool, errorDescription:String) in
+            
+            if(success)
+            {
+               
+               let alertView = SCLAlertView(appearance: appearance)
+               alertView.showSuccess("Delete Last Receipt", subTitle: "Delete with success")
+               
+               
+            }
+            else
+            {
+               let alertView = SCLAlertView(appearance: appearance)
+               alertView.showError("Delete Last Receipt", subTitle: errorDescription)
+            }
+            
+            
+         }
+         
+         
+         
+      }
+      alertView.showWarning("Delete Warning", subTitle: "Do you really want to delete the last receipt?")
+   }
+   
+   
+   
 }
