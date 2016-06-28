@@ -18,6 +18,7 @@
 		AF84828F1D2192D3006A3648 /* ViewControllerHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF84828E1D2192D3006A3648 /* ViewControllerHistory.swift */; };
 		AFAD816F1D194BD300C287CC /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AFAD816E1D194BD300C287CC /* Settings.bundle */; };
 		AFAD81771D196D1D00C287CC /* ViewControllerCheckouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAD81761D196D1D00C287CC /* ViewControllerCheckouts.swift */; };
+		AFB5EA751D233DD300300FC7 /* ViewControllerReceiptCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB5EA741D233DD300300FC7 /* ViewControllerReceiptCreation.swift */; };
 		AFE771771D215281001BDBF1 /* ViewControllerReceiptToPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE771761D215281001BDBF1 /* ViewControllerReceiptToPay.swift */; };
 		AFE771791D21821E001BDBF1 /* ReceiptHistoryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE771781D21821E001BDBF1 /* ReceiptHistoryDTO.swift */; };
 		AFEC1BD81D193E3F000B96DE /* font-awesome.css in Resources */ = {isa = PBXBuildFile; fileRef = AFEC1BB01D193E3F000B96DE /* font-awesome.css */; };
@@ -101,6 +102,7 @@
 		AF84828E1D2192D3006A3648 /* ViewControllerHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerHistory.swift; sourceTree = "<group>"; };
 		AFAD816E1D194BD300C287CC /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		AFAD81761D196D1D00C287CC /* ViewControllerCheckouts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerCheckouts.swift; sourceTree = "<group>"; };
+		AFB5EA741D233DD300300FC7 /* ViewControllerReceiptCreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerReceiptCreation.swift; sourceTree = "<group>"; };
 		AFE771761D215281001BDBF1 /* ViewControllerReceiptToPay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerReceiptToPay.swift; sourceTree = "<group>"; };
 		AFE771781D21821E001BDBF1 /* ReceiptHistoryDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptHistoryDTO.swift; sourceTree = "<group>"; };
 		AFEC1BB01D193E3F000B96DE /* font-awesome.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "font-awesome.css"; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				AF31396C1D1BE28700B3F3FC /* ViewControllerCheckoutMenu.swift */,
 				AFE771761D215281001BDBF1 /* ViewControllerReceiptToPay.swift */,
 				AF84828E1D2192D3006A3648 /* ViewControllerHistory.swift */,
+				AFB5EA741D233DD300300FC7 /* ViewControllerReceiptCreation.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -695,6 +698,7 @@
 			files = (
 				AFAD81771D196D1D00C287CC /* ViewControllerCheckouts.swift in Sources */,
 				AF42AFA21D185954004AF26C /* HTTPSSession.swift in Sources */,
+				AFB5EA751D233DD300300FC7 /* ViewControllerReceiptCreation.swift in Sources */,
 				AFFA6CF51D184A1000190423 /* ViewControllerLogin.swift in Sources */,
 				AFE771771D215281001BDBF1 /* ViewControllerReceiptToPay.swift in Sources */,
 				AFFA6CF31D184A1000190423 /* AppDelegate.swift in Sources */,

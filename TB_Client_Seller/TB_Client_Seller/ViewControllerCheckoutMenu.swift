@@ -29,6 +29,12 @@ class ViewControllerCheckoutMenu: UIViewController {
    
    var hud: MBProgressHUD?
    
+   var rotateActive: Bool = true;
+
+   override func shouldAutorotate() -> Bool {
+      return rotateActive
+   }
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -131,45 +137,9 @@ class ViewControllerCheckoutMenu: UIViewController {
    
    
    @IBAction func createReceiptAction(sender: AnyObject) {
-      let appearance = SCLAlertView.SCLAppearance(
-         kTitleFont: UIFont(name: "HelveticaNeue", size: 20)!,
-         kTextFont: UIFont(name: "HelveticaNeue", size: 14)!,
-         kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 14)!,
-         showCloseButton: false
-      )
       
-      // Initialize SCLAlertView using custom Appearance
-      let alert = SCLAlertView(appearance: appearance)
       
-      // Creat the subview
-      let subview = UIView(frame: CGRectMake(0,0,216,70))
-      let x = (subview.frame.width - 180) / 2
       
-      // Add textfield 1
-      let textfield1 = UITextField(frame: CGRectMake(x,10,180,25))
-      textfield1.layer.borderColor = UIColor.greenColor().CGColor
-      textfield1.layer.borderWidth = 1.5
-      textfield1.layer.cornerRadius = 5
-      textfield1.placeholder = "Username"
-      textfield1.textAlignment = NSTextAlignment.Center
-      subview.addSubview(textfield1)
-      
-      // Add textfield 2
-      let textfield2 = UITextField(frame: CGRectMake(x,textfield1.frame.maxY + 10,180,25))
-      textfield2.secureTextEntry = true
-      textfield2.layer.borderColor = UIColor.blueColor().CGColor
-      textfield2.layer.borderWidth = 1.5
-      textfield2.layer.cornerRadius = 5
-      textfield1.layer.borderColor = UIColor.blueColor().CGColor
-      textfield2.placeholder = "Password"
-      textfield2.textAlignment = NSTextAlignment.Center
-      subview.addSubview(textfield2)
-      
-      // Add the subview to the alert's UI property
-      alert.customSubview = subview
-      alert.addButton("Login") {
-         print("Logged in")
-      }
    }
    
 }
