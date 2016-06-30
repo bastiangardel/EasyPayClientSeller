@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 import KeychainSwift
-import SCLAlertView
 import TWMessageBarManager
 
 @UIApplicationMain
