@@ -27,23 +27,25 @@ class ViewControllerReceiptCreation: UIViewController {
    var hud: MBProgressHUD?
    
    let keychain = KeychainSwift()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+   
+   override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+      amountTF.endEditing(true)
+   }
+   
+   override func viewDidLoad() {
+      super.viewDidLoad()
+      
       createButton.color = UIColor.bb_defaultColorV2()
       createButton.setStyle(BButtonStyle.BootstrapV2)
       createButton.setType(BButtonType.Default)
       createButton.addAwesomeIcon(FAIcon.FACheck, beforeTitle: false)
       
-      
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   }
+   
+   override func didReceiveMemoryWarning() {
+      super.didReceiveMemoryWarning()
+      // Dispose of any resources that can be recreated.
+   }
    
    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
       if (segue.identifier == "returnMenuRCreationSegue") {
@@ -74,13 +76,15 @@ class ViewControllerReceiptCreation: UIViewController {
          kTitleHeight: 50
       )
       
+      amountTF.endEditing(true)
+      
       hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
       hud?.labelText = "Receipt List Loading in progress"
       hud?.labelFont = UIFont(name: "HelveticaNeue", size: 30)!
       
       var amount: Double?
-   
-
+      
+      
       
       if amountTF.text != ""
       {
@@ -122,12 +126,12 @@ class ViewControllerReceiptCreation: UIViewController {
       else
       {
          self.hud!.hide(true)
-
+         
          let alertView = SCLAlertView(appearance: appearance2)
          alertView.showError("Receipt Creation Error", subTitle: "No Amount defined")
       }
       
       
    }
-
+   
 }
