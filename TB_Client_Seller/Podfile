@@ -10,8 +10,6 @@ pod 'SwiftQRCode'
 
 pod 'KeychainSwift', '~> 3.0'
 
-pod 'Bluetonium'
-
 pod 'BButton'
 
 pod 'ObjectMapper', '~> 1.3'
