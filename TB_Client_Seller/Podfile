@@ -24,6 +24,8 @@ pod 'SCLAlertView'
 
 pod 'AlamofireNetworkActivityIndicator', '~> 1.0'
 
+pod 'TWMessageBarManager'
+
 end
 
 target 'TB_Client_SellerTests' do

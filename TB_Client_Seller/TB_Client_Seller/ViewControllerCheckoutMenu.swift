@@ -88,6 +88,11 @@ class ViewControllerCheckoutMenu: UIViewController {
          svc.toPass = toPass
       }
       
+      if (segue.identifier == "receiptCreationSegue") {
+         let svc = segue.destinationViewController as! ViewControllerReceiptCreation;
+         svc.toPass = toPass
+      }
+      
    }
    
    @IBAction func historyAction(sender: AnyObject) {
@@ -138,7 +143,7 @@ class ViewControllerCheckoutMenu: UIViewController {
    
    @IBAction func createReceiptAction(sender: AnyObject) {
       
-      
+      self.performSegueWithIdentifier("receiptCreationSegue", sender: self)
       
    }
    

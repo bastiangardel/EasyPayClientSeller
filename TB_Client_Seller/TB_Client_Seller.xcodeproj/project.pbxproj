@@ -10,6 +10,7 @@
 		054241B259AD84795E25D2DE /* Pods_TB_Client_SellerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC9CDEBE8AEA4D63FE569A8 /* Pods_TB_Client_SellerTests.framework */; };
 		5068DAAEC26245945F08B795 /* Pods_TB_Client_SellerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F905442D564B64E256336BC /* Pods_TB_Client_SellerUITests.framework */; };
 		AF31396D1D1BE28700B3F3FC /* ViewControllerCheckoutMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31396C1D1BE28700B3F3FC /* ViewControllerCheckoutMenu.swift */; };
+		AF3C2F161D25024700061F9B /* ReceiptCreationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3C2F151D25024700061F9B /* ReceiptCreationDTO.swift */; };
 		AF42AFA21D185954004AF26C /* HTTPSSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42AF9E1D185954004AF26C /* HTTPSSession.swift */; };
 		AF42AFA31D185954004AF26C /* ReceiptPayDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42AF9F1D185954004AF26C /* ReceiptPayDTO.swift */; };
 		AF42AFA41D185954004AF26C /* MessageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42AFA01D185954004AF26C /* MessageDTO.swift */; };
@@ -94,6 +95,7 @@
 		8F905442D564B64E256336BC /* Pods_TB_Client_SellerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TB_Client_SellerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A768BCCEC58D6736AE4D5CCB /* Pods-TB_Client_SellerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TB_Client_SellerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TB_Client_SellerUITests/Pods-TB_Client_SellerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF31396C1D1BE28700B3F3FC /* ViewControllerCheckoutMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerCheckoutMenu.swift; sourceTree = "<group>"; };
+		AF3C2F151D25024700061F9B /* ReceiptCreationDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptCreationDTO.swift; sourceTree = "<group>"; };
 		AF42AF9E1D185954004AF26C /* HTTPSSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPSSession.swift; sourceTree = "<group>"; };
 		AF42AF9F1D185954004AF26C /* ReceiptPayDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptPayDTO.swift; sourceTree = "<group>"; };
 		AF42AFA01D185954004AF26C /* MessageDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDTO.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				AF42AFA01D185954004AF26C /* MessageDTO.swift */,
 				AF6F58331D1A8D4D008E8A93 /* CheckoutDTO.swift */,
 				AFE771781D21821E001BDBF1 /* ReceiptHistoryDTO.swift */,
+				AF3C2F151D25024700061F9B /* ReceiptCreationDTO.swift */,
 			);
 			name = DTO;
 			sourceTree = "<group>";
@@ -465,6 +468,9 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = TW7764H853;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
 							com.apple.DataProtection = {
 								enabled = 1;
 							};
@@ -704,6 +710,7 @@
 				AFFA6CF31D184A1000190423 /* AppDelegate.swift in Sources */,
 				AF42AFA41D185954004AF26C /* MessageDTO.swift in Sources */,
 				AF6F58341D1A8D4D008E8A93 /* CheckoutDTO.swift in Sources */,
+				AF3C2F161D25024700061F9B /* ReceiptCreationDTO.swift in Sources */,
 				AFE771791D21821E001BDBF1 /* ReceiptHistoryDTO.swift in Sources */,
 				AF42AFA51D185954004AF26C /* Settings.swift in Sources */,
 				AFFA6CFB1D184A1000190423 /* TB_Client_Seller.xcdatamodeld in Sources */,

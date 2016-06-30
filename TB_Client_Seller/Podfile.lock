@@ -10,6 +10,7 @@ PODS:
   - SCLAlertView (0.5.6)
   - SwiftQRCode (2.0.2)
   - SwiftyJSON (2.3.2)
+  - TWMessageBarManager (1.8.1)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
@@ -22,6 +23,7 @@ DEPENDENCIES:
   - SCLAlertView
   - SwiftQRCode
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+  - TWMessageBarManager
 
 EXTERNAL SOURCES:
   SwiftyJSON:
@@ -43,7 +45,8 @@ SPEC CHECKSUMS:
   SCLAlertView: c2b916952520d96cf5e886a38053f1b8c3da502e
   SwiftQRCode: 68e920781686e376d70646b90c8ad87fd6523309
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  TWMessageBarManager: fd84e7948ba7968a2b5d9454859135761214ec56
 
-PODFILE CHECKSUM: a4a49d874fc28c59cc80cdac282c804128469b1d
+PODFILE CHECKSUM: 178bb0dff4d0483e394512b4a350da3166fa9c8c
 
 COCOAPODS: 1.0.0

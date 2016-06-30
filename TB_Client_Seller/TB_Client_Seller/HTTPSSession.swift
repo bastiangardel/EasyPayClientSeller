@@ -291,6 +291,38 @@ public class HTTPSSession: NSObject {
       }
    }
    
+   public func createReceipt (let receipt: ReceiptCreationDTO, completion: (success: Bool, description: String) -> Void){
+      
+      var message : MessageDTO?
+      
+      
+      let headers = [
+         "Content-Type": "application/json",
+         "Accept": "application/json"
+      ]
+      
+      print("try to create Receipt")
+      
+      
+      defaultManager.request(.POST, completeURL(HTTPSSession.URL, port: HTTPSSession.PORT, restEndpoint: "/receipts"), headers : headers, parameters: Mapper<ReceiptCreationDTO>().toJSON(receipt) , encoding: .JSON)
+         .validate()
+         .responseJSON{ Response in
+            switch Response.result {
+            case .Success:
+               print("Create Receipt Successfully")
+               
+               message = Mapper<MessageDTO>().map(Response.result.value)!
+               
+               completion(success: true, description: (message!.message)!)
+               
+               
+            case .Failure(let error):
+               print("Create Receipt Failfully")
+               completion(success: false, description : self.errorDescriptionJSON(Response, error: error))
+            }
+      }
+   }
+   
    
    public func logout(){
       defaultManager.request(.POST, completeURL(HTTPSSession.URL, port: HTTPSSession.PORT, restEndpoint: "/users/logout")).responseData{ Response in
