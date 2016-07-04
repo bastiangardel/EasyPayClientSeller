@@ -44,6 +44,8 @@ class ViewControllerReceiptToPay: UIViewController {
       
       qrcode.image = QRCode.generateImage((toPass?.uuid)!, avatarImage: UIImage(named: "avatar"), avatarScale: 0.3)
       
+      NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewControllerReceiptToPay.quitView(_:)), name: "quitView", object: nil)
+      
       hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
       hud?.labelText = "Receipt Loading in progress"
       hud?.labelFont = UIFont(name: "HelveticaNeue", size: 30)!
@@ -57,7 +59,7 @@ class ViewControllerReceiptToPay: UIViewController {
          {
             self.receipt = receiptPayDTO
             
-            self.amountLabel.text = "CHF " + (self.receipt?.amount?.description)!
+            self.amountLabel.text = "CHF " + String(format: "%.02f", (self.receipt?.amount)!)
             self.ReceiptIDLabel.text = "Receipt ID: " + (self.receipt?.id?.description)!
             
          }
@@ -88,6 +90,10 @@ class ViewControllerReceiptToPay: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+   
+   func quitView(notification: NSNotification) {
+      self.performSegueWithIdentifier("returnMenuSegue", sender: self)
+   }
     
    @IBAction func returnMenuAction(sender: AnyObject) {
       self.performSegueWithIdentifier("returnMenuSegue", sender: self)

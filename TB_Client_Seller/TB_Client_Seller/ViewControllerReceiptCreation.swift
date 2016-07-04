@@ -17,6 +17,7 @@ class ViewControllerReceiptCreation: UIViewController {
    
    @IBOutlet weak var createButton: BButton!
    @IBOutlet weak var amountTF: UITextField!
+   @IBOutlet weak var returnMenuButton: BButton!
    
    var toPass: CheckoutDTO?
    
@@ -40,6 +41,11 @@ class ViewControllerReceiptCreation: UIViewController {
       createButton.setType(BButtonType.Default)
       createButton.addAwesomeIcon(FAIcon.FACheck, beforeTitle: false)
       
+      returnMenuButton.color = UIColor.bb_dangerColorV2()
+      returnMenuButton.setStyle(BButtonStyle.BootstrapV2)
+      returnMenuButton.setType(BButtonType.Danger)
+      returnMenuButton.addAwesomeIcon(FAIcon.FAAngleDoubleLeft, beforeTitle: true)
+      
    }
    
    override func didReceiveMemoryWarning() {
@@ -53,6 +59,16 @@ class ViewControllerReceiptCreation: UIViewController {
          svc.toPass = toPass
       }
       
+      if (segue.identifier == "paymentSegue") {
+         let svc = segue.destinationViewController as! ViewControllerReceiptToPay;
+         svc.toPass = toPass
+      }
+      
+   }
+   
+   
+   @IBAction func returnMenuAction(sender: AnyObject) {
+      self.performSegueWithIdentifier("returnMenuRCreationSegue", sender: self)
    }
    
    @IBAction func createAction(sender: AnyObject) {
@@ -93,9 +109,14 @@ class ViewControllerReceiptCreation: UIViewController {
          {
             let receipt : ReceiptCreationDTO = ReceiptCreationDTO(uuid: (toPass?.uuid)!,amount: amount!, deviceToken: keychain.get("deviceToken")!)
             
-            let alertView = SCLAlertView(appearance: appearance1)
-            alertView.addButton("Return to menu"){
+            let alertView2 = SCLAlertView(appearance: appearance1)
+            alertView2.addButton("Return to menu"){
                self.performSegueWithIdentifier("returnMenuRCreationSegue", sender: self)
+            }
+            
+            let alertView1 = SCLAlertView(appearance: appearance1)
+            alertView1.addButton("Go to paiement screen"){
+               self.performSegueWithIdentifier("paymentSegue", sender: self)
             }
             
             httpsSession.createReceipt(receipt){
@@ -105,11 +126,11 @@ class ViewControllerReceiptCreation: UIViewController {
                
                if(success)
                {
-                  alertView.showSuccess("Receipt Creation", subTitle: description)
+                  alertView1.showSuccess("Receipt Creation", subTitle: description)
                }
                else
                {
-                  alertView.showError("Receipt Creation Error", subTitle: description)
+                  alertView2.showError("Receipt Creation Error", subTitle: description)
                }
             }
          }

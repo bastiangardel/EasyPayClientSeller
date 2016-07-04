@@ -111,7 +111,7 @@ class ViewControllerCheckoutMenu: UIViewController {
       )
       
       let alertView = SCLAlertView(appearance: appearance)
-      alertView.addButton("ok"){
+      alertView.addButton("Delete"){
          alertView.hideView()
          
          self.httpsSession.deleteReceiptToPay((self.toPass?.uuid)!){
@@ -128,7 +128,7 @@ class ViewControllerCheckoutMenu: UIViewController {
             else
             {
                let alertView = SCLAlertView(appearance: appearance)
-               alertView.showError("Delete Last Receipt", subTitle: errorDescription)
+               alertView.showError("Error Delete Last Receipt", subTitle: errorDescription)
             }
             
             

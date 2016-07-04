@@ -54,7 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       application.applicationIconBadgeNumber = 0
          
      TWMessageBarManager.sharedInstance().showMessageWithTitle(userInfo["aps"]!["alert"]!!["title"] as? String, description: userInfo["aps"]!["alert"]!!["body"] as? String, type: TWMessageBarMessageType.Success, duration:6.0)
-      
+   
+     NSNotificationCenter.defaultCenter().postNotificationName("quitView", object: nil)
    }
    
    func applicationWillResignActive(application: UIApplication) {
