@@ -211,7 +211,6 @@ public class HTTPSSession: NSObject {
       defaultManager.request(.GET, completeURL(HTTPSSession.URL, port: HTTPSSession.PORT, restEndpoint: "/receipts/history"), headers : headers, parameters: ["uuid" : checkOutUUID])
          .validate()
          .responseJSON{ Response in
-            print(Response.request)
             
             var listCheckout : Array<ReceiptHistoryDTO>
             

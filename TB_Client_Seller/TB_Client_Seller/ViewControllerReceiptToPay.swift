@@ -92,7 +92,13 @@ class ViewControllerReceiptToPay: UIViewController {
     }
    
    func quitView(notification: NSNotification) {
-      self.performSegueWithIdentifier("returnMenuSegue", sender: self)
+      
+      print(notification.userInfo!["aps"]!["uuid"])
+      
+      if(notification.userInfo!["uuid"]! as? String == toPass?.uuid){
+         self.performSegueWithIdentifier("returnMenuSegue", sender: self)
+      }
+      
    }
     
    @IBAction func returnMenuAction(sender: AnyObject) {
