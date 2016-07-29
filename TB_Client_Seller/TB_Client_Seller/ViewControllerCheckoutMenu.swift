@@ -3,14 +3,38 @@
 //  TB_Client_Seller
 //
 //  Created by Bastian Gardel on 23.06.16.
-//  Copyright © 2016 Bastian Gardel. All rights reserved.
 //
+// Copyright © 2016 Bastian Gardel
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy of
+// this software and associated documentation files (the "Software"), to deal in
+// the Software without restriction, including without limitation the rights to use,
+// copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
+// Software, and to permit persons to whom the Software is furnished to do so,
+// subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+// PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+// SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import UIKit
 import BButton
 import MBProgressHUD
 import SCLAlertView
 
+
+// ** Class ViewControllerCheckoutMenu **
+//
+// View Menu Checkout Controller
+//
+// Author: Bastian Gardel
+// Version: 1.0
 class ViewControllerCheckoutMenu: UIViewController {
    
    @IBOutlet weak var receiptHistoryButton: BButton!
@@ -31,10 +55,12 @@ class ViewControllerCheckoutMenu: UIViewController {
    
    var rotateActive: Bool = true;
 
+   
    override func shouldAutorotate() -> Bool {
       return rotateActive
    }
    
+   //View Initialisation
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -70,13 +96,17 @@ class ViewControllerCheckoutMenu: UIViewController {
       // Dispose of any resources that can be recreated.
    }
    
+   //Click on return button handler
    @IBAction func returnAction(sender: AnyObject) {
       self.performSegueWithIdentifier("returnCheckoutListSegue", sender: self)
    }
    
+   //Click on receiptToPay button handler
    @IBAction func receiptToPayAction(sender: AnyObject) {
       self.performSegueWithIdentifier("receiptToPaySegue", sender: self)
    }
+   
+   //Prepare transfer values for next view
    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
       if (segue.identifier == "receiptToPaySegue") {
          let svc = segue.destinationViewController as! ViewControllerReceiptToPay;
@@ -95,10 +125,13 @@ class ViewControllerCheckoutMenu: UIViewController {
       
    }
    
+   //Click on History button handler
    @IBAction func historyAction(sender: AnyObject) {
       self.performSegueWithIdentifier("receiptHistorySegue", sender: self)
       
    }
+   
+   //Click on deleteReceipt button handler
    @IBAction func deletReceiptAction(sender: AnyObject) {
       
       let appearance = SCLAlertView.SCLAppearance(
@@ -141,6 +174,7 @@ class ViewControllerCheckoutMenu: UIViewController {
    }
    
    
+   //Click On createReceipt Button handler
    @IBAction func createReceiptAction(sender: AnyObject) {
       
       self.performSegueWithIdentifier("receiptCreationSegue", sender: self)
